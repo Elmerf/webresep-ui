@@ -1,15 +1,13 @@
 <template>
-<div>
-  <h2>Halaman Login</h2>
-</div>
+  <div></div>
 </template>
 
 <script>
-export default {
-    name : 'Login',
-}
+export default {};
 </script>
 
-<style>
-
+<style scoped>
+.image {
+  width: 600px;
+}
 </style>
