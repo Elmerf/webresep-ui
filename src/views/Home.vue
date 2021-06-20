@@ -1,7 +1,7 @@
 <template>
-  <div class="home">    
-    <NavBar/>
-    <Banner/>
+  <div class="home">
+    <NavBar />
+    <Banner />
   </div>
 </template>
 

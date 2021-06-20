@@ -16,26 +16,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Kategori
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Menu Utama</a></li>
-              <li><a class="dropdown-item" href="#">Cemilan</a></li>
-              <li><a class="dropdown-item" href="#">Dessert</a></li>
-            </ul>
-          </li> -->
           <router-link to="/daftar"
             ><button type="button" class="btn btn-warning navbar-login">
               Daftar
@@ -49,9 +29,6 @@
           >
             Login
           </button>
-          <!--
-          <button type="button" class="btn btn-warning">Daftar</button>
-          <button type="button" class="btn btn-outline-dark">Login</button> -->
         </ul>
       </div>
     </div>
@@ -86,6 +63,7 @@
                   aria-describedby="emailHelp"
                   required
                   placeholder="Email Address"
+                  v-model="email"
                 />
               </div>
               <div class="mb-3">
@@ -95,26 +73,55 @@
                   id="exampleInputPassword1"
                   required
                   placeholder="Password"
+                  v-model="password"
                 />
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <router-link to="/dashboard">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
-              >
-                Login
-              </button></router-link
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              v-on:click="Login"
             >
+              Login
+            </button>
           </div>
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "NavBar",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    Login() {
+      axios
+        .post("http://localhost:3000/user", {
+          email: this.email,
+          password: this.password,
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
+        .finally(() => {
+          this.$router.replace("/dashboard");
+        });
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 nav {
