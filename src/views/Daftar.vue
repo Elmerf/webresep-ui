@@ -63,7 +63,7 @@
               Password dont match
             </div>
           </div>
-          <button type="submit" class="btn btn-warning">Register</button>
+          <button type="submit" class="btn btn-warning">Daftar</button>
         </form>
       </div>
       <div class="col-md-3"></div>
@@ -93,13 +93,18 @@ export default {
     registerUser(e) {
       e.preventDefault();
       axios
-        .post("http://localhost:3000/users", {
+        .post("http://localhost:3000/user", {
           username: this.username,
           email: this.email,
           password: this.password,
         })
-        .then((res) => console.log(res))
-        .catch((error) => console.log(error));
+        .then((res) => {
+          if (res.status == 200) {
+            this.$session.start();
+            this.$router.replace("/dashboard");
+          }
+        })
+        .catch((error) => alert(error.response.data.message));
     },
   },
 };

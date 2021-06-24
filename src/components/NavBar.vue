@@ -14,7 +14,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <div
+        v-if="!this.$session.exists()"
+        class="collapse navbar-collapse"
+        id="navbarTogglerDemo01"
+      >
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <router-link to="/daftar"
             ><button type="button" class="btn btn-warning navbar-login">
@@ -29,6 +33,28 @@
           >
             Login
           </button>
+        </ul>
+      </div>
+      <div v-else class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {{ this.$session.get("user") }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <button type="button" class="dropdown-item" v-on:click="logout">
+                Logout
+              </button>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -81,7 +107,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-primary"
+              class="btn btn-warning"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               v-on:click="Login"
@@ -109,15 +135,24 @@ export default {
   methods: {
     Login() {
       axios
-        .post("http://localhost:3000/user", {
-          email: this.email,
-          password: this.password,
+        .get("http://localhost:3000/user", {
+          params: {
+            email: this.email,
+            password: this.password,
+          },
         })
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
-        .finally(() => {
-          this.$router.replace("/dashboard");
-        });
+        .then((res) => {
+          if (res.status == 200) {
+            this.$session.start();
+            this.$session.set("user", this.email);
+            this.$router.replace("/dashboard");
+          }
+        })
+        .catch((err) => alert(err.response.data.message));
+    },
+    logout() {
+      this.$session.destroy();
+      this.$router.push("/");
     },
   },
 };
