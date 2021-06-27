@@ -16,7 +16,7 @@
       <div class="col-md-4">
         <div class="card shadow" style="width: 20rem">
           <div class="inner">
-            <img src="../assets/banner2.jpg" class="card-img-top" alt="..." />
+            <img src="../assets/soto.jpg" class="card-img-top" alt="..." />
           </div>
           <div class="card-body text-center">
             <h5 class="card-title">Soto Lamongan</h5>
@@ -24,7 +24,8 @@
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <a href="#" class="btn btn-success">Lihat Resep</a>
+            <a href="#" class="btn btn-success" v-on:click="resep">Lihat Resep</a
+            >
           </div>
         </div>
       </div>
@@ -50,6 +51,11 @@
 <script>
 export default {
   name: "CardProduct",
+  methods: {
+    resep() {
+      this.$router.replace("/resep");
+    },
+  },
 };
 </script>
 
