@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Daftar from "../views/Daftar.vue";
-import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Resep from "../views/Resep.vue";
 
@@ -18,11 +17,6 @@ const routes = [
     path: "/daftar",
     name: "Daftar",
     component: Daftar,
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login,
   },
   {
     path: "/dashboard",
