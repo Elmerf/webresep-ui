@@ -58,12 +58,12 @@ nav {
   background-image: linear-gradient(to right, #fbac19, #f47620);
 
   .container-fluid {
-    margin: 0 10%;
+    margin: 0 5%;
   }
 
   .navbar-brand {
     font-family: "Pattaya", sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
   }
 }
 
