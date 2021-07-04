@@ -1,6 +1,15 @@
 <template>
   <div class="container">
-    <h1><br>Macam Resepnya Kakak</h1>
+
+    <div class="row md-4">
+      <div class="col md-2">
+        <h2>Resep <strong>Populer</strong> Hari Ini</h2>
+      </div>
+      <div class="col">
+        <router-link to="/resep" class="btn btn-success float-right"><b-icon-eye></b-icon-eye>Lihat Semua</router-link>
+      </div>
+    </div>
+
   <ul class="cards">
     <li class="cards_item">
       <div class="card">
@@ -8,7 +17,7 @@
         <div class="card_content">
           <h2 class="card_title">GULAI</h2>
           <p class="card_text">Gulai memiliki rasa yang khas, kunci sajiannya terletak pada olahan bumbu rempah yang kuat dan santan</p>
-          <button class="btn card_btn" href="#">Read More</button>
+          <button class="btn card_btn" href="../components/DetailResep.vue">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -18,7 +27,7 @@
         <div class="card_content">
           <h2 class="card_title">SOTO LAMONGAN</h2>
           <p class="card_text">Soto Lamongan adalah soto ayam dengan ciri khas kuah kuning dengan campuran koya dari krupuk udang dan bawang putih</p>
-          <button class="btn card_btn">Read More</button>
+          <router-link to="/resep"><button class="btn card_btn">Lihat Resep</button></router-link>
         </div>
       </div>
     </li>
@@ -28,7 +37,7 @@
         <div class="card_content">
           <h2 class="card_title">SATE</h2>
           <p class="card_text">Sate Ayam merupakan campuran bumbu kacang dan kecap yang di balur pada daging ayam, yang akan dibakar </p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -38,7 +47,7 @@
         <div class="card_content">
           <h2 class="card_title">MIE ACEH</h2>
           <p class="card_text">Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -48,7 +57,7 @@
         <div class="card_content">
           <h2 class="card_title">RENDANG</h2>
           <p class="card_text">Rendang menjadi olahan daging sapi yang cocok dinikmati bersama keluarga, mudah dibuat dan bahan-bahan yang gampang didapat</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -58,7 +67,7 @@
         <div class="card_content">
           <h2 class="card_title">SATE LILIT AYAM BALI</h2>
           <p class="card_text">Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan yang membedakan dengan sate lainnya lohh..</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -68,7 +77,7 @@
         <div class="card_content">
           <h2 class="card_title">MIE ACEH</h2>
           <p class="card_text">Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -78,7 +87,7 @@
         <div class="card_content">
           <h2 class="card_title">RENDANG</h2>
           <p class="card_text">Rendang menjadi olahan daging sapi yang cocok dinikmati bersama keluarga, mudah dibuat dan bahan-bahan yang gampang didapat</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -88,7 +97,7 @@
         <div class="card_content">
           <h2 class="card_title">SATE LILIT AYAM BALI</h2>
           <p class="card_text">Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan yang membedakan dengan sate lainnya lohh..</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -118,11 +127,7 @@ export default {
   box-sizing: border-box;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
-}
+
 
 .card_image{
   max-height: 12rem;
@@ -131,17 +136,18 @@ h1 {
 }
 
 
-.btn {
+.card_btn {
   background: #000000;
   padding: 0.8rem;
   font-size: 18px;
   text-transform: uppercase;
   border-radius: 4px;
   font-weight: bold;
-  width: 100%;
+  width: 70%;
   display: flex;
   cursor: pointer;
 }
+
 
 .btn:hover {
   background-color: #70983f;
