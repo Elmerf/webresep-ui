@@ -2,6 +2,20 @@
   <div class="home">
     <NavBar />
     <Banner />
+    <div class="container">
+      <div class="row md-4">
+        <div class="col md-6">
+          <h2>Resep <strong>Populer</strong> Hari Ini</h2>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-3">
+          <button class="btn btn-success float-right" v-on:click="dashboard">
+            <b-icon-arrow-up></b-icon-arrow-up>
+            Lihat Semua
+          </button>
+        </div>
+      </div>
+    </div>
     <CardProduct />
   </div>
 </template>
@@ -18,6 +32,11 @@ export default {
     NavBar,
     Banner,
     CardProduct,
+  },
+  methods: {
+    dashboard() {
+      this.$router.replace("/dashboard");
+    },
   },
 };
 </script>

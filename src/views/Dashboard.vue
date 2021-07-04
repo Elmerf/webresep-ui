@@ -1,5 +1,23 @@
 <template>
-  <div><NavBar /> <CardProduct /></div>
+  <div>
+    <NavBar />
+    <div class="container">
+      <div class="colom">
+        <div class="input-group input-group-lg">
+          <input
+            v-model="search"
+            type="text"
+            class="form-control"
+            placeholder="Cari Resep Kesukaanmu Disini"
+            aria-label="Cari"
+            aria-describedby="basic-addon1"
+            @keyup="search"
+          />
+        </div>
+      </div>
+    </div>
+    <CardProduct />
+  </div>
 </template>
 
 <script>
@@ -17,6 +35,11 @@ export default {
       this.$router.push("/");
     }
   },
+  data() {
+    return {
+      search: "",
+    };
+  },
   methods: {
     logout() {
       this.$session.destroy();
@@ -26,4 +49,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.colom {
+  margin-top: 2%;
+}
+</style>

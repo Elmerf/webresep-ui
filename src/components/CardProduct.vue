@@ -1,108 +1,129 @@
 <template>
   <div class="container">
-
-    <div class="row md-4">
-      <div class="col md-2">
-        <h2>Resep <strong>Populer</strong> Hari Ini</h2>
-      </div>
-      <div class="col">
-        <router-link to="/resep" class="btn btn-success float-right"><b-icon-eye></b-icon-eye>Lihat Semua</router-link>
-      </div>
-    </div>
-
-  <ul class="cards">
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/gule.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">GULAI</h2>
-          <p class="card_text">Gulai memiliki rasa yang khas, kunci sajiannya terletak pada olahan bumbu rempah yang kuat dan santan</p>
-          <button class="btn card_btn" href="../components/DetailResep.vue">Lihat Resep</button>
+    <ul class="cards">
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/gule.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">GULAI</h2>
+            <p class="card_text">
+              Gulai memiliki rasa yang khas, kunci sajiannya terletak pada
+              olahan bumbu rempah yang kuat dan santan
+            </p>
+            <button class="btn card_btn" href="../components/DetailResep.vue">
+              Lihat Resep
+            </button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/soto.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">SOTO LAMONGAN</h2>
-          <p class="card_text">Soto Lamongan adalah soto ayam dengan ciri khas kuah kuning dengan campuran koya dari krupuk udang dan bawang putih</p>
-          <router-link to="/resep"><button class="btn card_btn">Lihat Resep</button></router-link>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/soto.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">SOTO LAMONGAN</h2>
+            <p class="card_text">
+              Soto Lamongan adalah soto ayam dengan ciri khas kuah kuning dengan
+              campuran koya dari krupuk udang dan bawang putih
+            </p>
+            <router-link to="/resep"
+              ><button class="btn card_btn">Lihat Resep</button></router-link
+            >
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/sate.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">SATE</h2>
-          <p class="card_text">Sate Ayam merupakan campuran bumbu kacang dan kecap yang di balur pada daging ayam, yang akan dibakar </p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/sate.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">SATE</h2>
+            <p class="card_text">
+              Sate Ayam merupakan campuran bumbu kacang dan kecap yang di balur
+              pada daging ayam, yang akan dibakar
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/miaceh.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">MIE ACEH</h2>
-          <p class="card_text">Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/miaceh.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">MIE ACEH</h2>
+            <p class="card_text">
+              Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal
+              dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/rendang.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">RENDANG</h2>
-          <p class="card_text">Rendang menjadi olahan daging sapi yang cocok dinikmati bersama keluarga, mudah dibuat dan bahan-bahan yang gampang didapat</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/rendang.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">RENDANG</h2>
+            <p class="card_text">
+              Rendang menjadi olahan daging sapi yang cocok dinikmati bersama
+              keluarga, mudah dibuat dan bahan-bahan yang gampang didapat
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div><img class="card_image" src="../assets/satelilit.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">SATE LILIT AYAM BALI</h2>
-          <p class="card_text">Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan yang membedakan dengan sate lainnya lohh..</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/satelilit.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">SATE LILIT AYAM BALI</h2>
+            <p class="card_text">
+              Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan
+              yang membedakan dengan sate lainnya lohh..
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/miaceh.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">MIE ACEH</h2>
-          <p class="card_text">Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/miaceh.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">MIE ACEH</h2>
+            <p class="card_text">
+              Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal
+              dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div ><img class="card_image" src="../assets/rendang.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">RENDANG</h2>
-          <p class="card_text">Rendang menjadi olahan daging sapi yang cocok dinikmati bersama keluarga, mudah dibuat dan bahan-bahan yang gampang didapat</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/rendang.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">RENDANG</h2>
+            <p class="card_text">
+              Rendang menjadi olahan daging sapi yang cocok dinikmati bersama
+              keluarga, mudah dibuat dan bahan-bahan yang gampang didapat
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="cards_item">
-      <div class="card">
-        <div><img class="card_image" src="../assets/satelilit.jpg"></div>
-        <div class="card_content">
-          <h2 class="card_title">SATE LILIT AYAM BALI</h2>
-          <p class="card_text">Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan yang membedakan dengan sate lainnya lohh..</p>
-          <button class="btn card_btn">Lihat Resep</button>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/satelilit.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">SATE LILIT AYAM BALI</h2>
+            <p class="card_text">
+              Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan
+              yang membedakan dengan sate lainnya lohh..
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
         </div>
-      </div>
-    </li>
-  </ul>
-</div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -118,7 +139,7 @@ export default {
 
 <style>
 /* Font */
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 
 /* Design */
 *,
@@ -127,14 +148,11 @@ export default {
   box-sizing: border-box;
 }
 
-
-
-.card_image{
+.card_image {
   max-height: 12rem;
   max-width: auto;
   vertical-align: middle;
 }
-
 
 .card_btn {
   background: #000000;
@@ -147,7 +165,6 @@ export default {
   display: flex;
   cursor: pointer;
 }
-
 
 .btn:hover {
   background-color: #70983f;
@@ -205,8 +222,7 @@ export default {
   color: #000000;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;    
+  margin-bottom: 1.25rem;
   font-weight: 400;
 }
-
 </style>
