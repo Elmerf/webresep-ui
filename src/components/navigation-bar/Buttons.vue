@@ -22,10 +22,16 @@
         <router-link to="/daftar"
           ><button type="button" class="btn btn-warning navbar-login">
             Daftar
-          </button></router-link>
-          
-          <button type="button" class="btn btn-outline-dark navbar-login" data-bs-toggle="modal" data-bs-target="#exampleModal"
-          to="/login">
+          </button></router-link
+        >
+
+        <button
+          type="button"
+          class="btn btn-outline-dark navbar-login"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          to="/login"
+        >
           Login
         </button>
       </ul>
@@ -56,7 +62,7 @@
               type="button"
               class="dropdown-item"
               data-bs-toggle="modal"
-              data-bs-target="#setting"
+              data-bs-target="#modalSetting"
             >
               Setting Akun
             </button>
@@ -76,7 +82,7 @@ export default {
   methods: {
     logout() {
       this.$session.destroy();
-      this.$router.push("/");
+      location.reload();
     },
   },
 };

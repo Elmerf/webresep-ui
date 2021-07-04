@@ -2,7 +2,7 @@
   <!-- Modal setting -->
   <div
     class="modal fade"
-    id="setting"
+    id="modalSetting"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -56,38 +56,10 @@
               role="tabpanel"
               aria-labelledby="home-tab"
             >
-              <form>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"
-                    >Username</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    v-model="username"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                    v-model="email"
-                  />
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-warning"
-                    v-on:click="updateUser"
-                  >
-                    Update
-                  </button>
-                </div>
-              </form>
+              <form-data-diri
+                :username="user.username"
+                :email="user.email"
+              ></form-data-diri>
             </div>
             <div
               class="tab-pane fade"
@@ -95,7 +67,9 @@
               role="tabpanel"
               aria-labelledby="profile-tab"
             >
-              ...
+              <form-ubah-password
+                :password="user.password"
+              ></form-ubah-password>
             </div>
           </div>
         </div>
@@ -106,28 +80,26 @@
 
 <script>
 import axios from "axios";
+import FormDataDiri from "./settings/FormDataDiri.vue";
+import FormUbahPassword from "./settings/FormUbahPassword.vue";
 
 export default {
   name: "ModalSetting",
+  components: {
+    FormDataDiri,
+    FormUbahPassword,
+  },
   data() {
     return {
-      email: "",
-      username: "",
-      password: "",
       user: {},
     };
   },
-  methods: {
-    updateUser() {},
-  },
-  beforeCreate() {
+  mounted() {
     if (this.$session.exists()) {
       axios
         .get(`http://localhost:3000/user/${this.$session.get("_id")}`)
         .then((res) => {
           this.user = res.data.data;
-          this.email = this.user.email;
-          this.username = this.user.username;
         })
         .catch((error) => console.log(error));
     }
