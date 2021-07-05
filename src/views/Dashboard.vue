@@ -1,7 +1,8 @@
 <template>
   <div>
     <NavBar />
-    <div class="container">
+    <DashboardRecipe />
+    <!-- <div class="container">
       <div class="colom">
         <div class="input-group input-group-lg">
           <input
@@ -16,19 +17,22 @@
         </div>
       </div>
     </div>
-    <CardProduct />
+    <CardProduct /> -->
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar";
-import CardProduct from "@/components/CardProduct";
+import DashboardRecipe from "@/components/DashboardRecipe";
+
+// import CardProduct from "@/components/CardProduct";
 
 export default {
   name: "Dashboard",
   components: {
     NavBar,
-    CardProduct,
+    DashboardRecipe,
+    // CardProduct,
   },
   beforeCreate() {
     if (!this.$session.exists()) {
