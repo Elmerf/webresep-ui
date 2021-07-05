@@ -81,45 +81,6 @@
             </p>
             <button class="btn card_btn">Lihat Resep</button>
           </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div><img class="card_image" src="../assets/miaceh.jpg" /></div>
-          <div class="card_content">
-            <h2 class="card_title">MIE ACEH</h2>
-            <p class="card_text">
-              Mie Aceh, hidangan tradisional khas Serambi Mekah yang terkenal
-              dengan rasa pedas, segar dan lezat ternyata mudah untuk dibuat
-            </p>
-            <button class="btn card_btn">Lihat Resep</button>
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div><img class="card_image" src="../assets/rendang.jpg" /></div>
-          <div class="card_content">
-            <h2 class="card_title">RENDANG</h2>
-            <p class="card_text">
-              Rendang menjadi olahan daging sapi yang cocok dinikmati bersama
-              keluarga, mudah dibuat dan bahan-bahan yang gampang didapat
-            </p>
-            <button class="btn card_btn">Lihat Resep</button>
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div><img class="card_image" src="../assets/satelilit.jpg" /></div>
-          <div class="card_content">
-            <h2 class="card_title">SATE LILIT AYAM BALI</h2>
-            <p class="card_text">
-              Kuliner yang dicari saat berwisata ke Bali, banyak keistimewaan
-              yang membedakan dengan sate lainnya lohh..
-            </p>
-            <button class="btn card_btn">Lihat Resep</button>
-          </div>
       </div>
     </li>
     <li class="cards_item">
