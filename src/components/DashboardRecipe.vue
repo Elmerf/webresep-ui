@@ -4,6 +4,7 @@
     <div v-if="Object.keys(recipes).length === 0" class="text-muted">
       Kamu masih belum punya resep nih, yuk mulai berbagi resep kesukaanmu!
     </div>
+    <button class="btn btn-warning" v-on:click="AddResep">Tambah Resep</button>
   </div>
 </template>
 
@@ -14,6 +15,11 @@ export default {
     return {
       recipes: {},
     };
+  },
+  methods: {
+    AddResep() {
+      this.$router.replace("/dashboard/tambahresep");
+    },
   },
 };
 </script>
