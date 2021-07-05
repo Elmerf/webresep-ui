@@ -9,10 +9,10 @@
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-3">
-          <button class="btn btn-success float-right" v-on:click="dashboard">
+          <router-link to="/masakan"> <button class="btn btn-success float-right" v-on:click="dashboard">
             <b-icon-arrow-up></b-icon-arrow-up>
-            Lihat Semua
-          </button>
+            Lihat Semua Resep <strong>DISINI </strong>
+          </button></router-link>
         </div>
       </div>
     </div>

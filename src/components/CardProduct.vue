@@ -89,7 +89,7 @@
         <div class="card_content">
           <h2 class="card_title">RAWON</h2>
           <p class="card_text">Rawon adalah masakan Indonesia berupa sup daging berkuah hitam dengan campuran bumbu khas yang menggunakan kluwek</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -99,7 +99,7 @@
         <div class="card_content">
           <h2 class="card_title">SOP BUNTUT</h2>
           <p class="card_text">Sop buntut merupakan makanan yang terdiri dari buntut atau ekor sapi sebagai bagian utamanya</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -109,7 +109,7 @@
         <div class="card_content">
           <h2 class="card_title">GADO-GADO</h2>
           <p class="card_text">Gado-gado, Makanan khas Jawa yang dicampur dengan bumbu kacang tanah. Biasanya disebut salad versi Indonesia. </p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -119,7 +119,7 @@
         <div class="card_content">
           <h2 class="card_title">PERKEDEL</h2>
           <p class="card_text"> Perkedel adalah makanan yang terbuat dari kentang yang digoreng atau direbus sebelum dilumatkan</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
@@ -129,20 +129,58 @@
         <div class="card_content">
           <h2 class="card_title">BAKMI JAWA</h2>
           <p class="card_text">Bakmi jawa atau mie jawa dengan rasa gurih yang kuat dengan pelengkap acar timun dan kerupuk</p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
     <li class="cards_item">
       <div class="card">
-        <div><img class="card_image" src="../assets/oporayam.jpg"></div>
+        <div><img class="card_image" src="../assets/opor.jpeg"></div>
         <div class="card_content">
           <h2 class="card_title">OPOR AYAM</h2>
           <p class="card_text">Opor ayam merupakan masakan sejenis kari ayam yang sangat dikenal di Indonesia berkuah pekat dan berwarna kuning </p>
-          <button class="btn card_btn">Read More</button>
+          <button class="btn card_btn">Lihat Resep</button>
         </div>
       </div>
     </li>
+    <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/nasikrawu.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">NASI KRAWU GRESIK</h2>
+            <p class="card_text">
+              Olahan Khas Kota Gresik ini begitu nikmat, Daging suwir
+              dengan daun pisang menambah rasa kangen akan cita rasanya
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/nasiboran.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">NASI BORAN LAMONGAN</h2>
+            <p class="card_text">
+              Olahan khas Kota Lamongan ini susah banget ditemuin
+              di kota lain, namun dengan resep ini, kalian bisa menikmati masakan nikmat ini
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div><img class="card_image" src="../assets/gudeg.jpg" /></div>
+          <div class="card_content">
+            <h2 class="card_title">GUDEG JOGJA</h2>
+            <p class="card_text">
+              Rasa kangen kota Jogja bisa kamu tebus dengan menikmati gudeg dengan resep mudah dan gampang loo...
+            </p>
+            <button class="btn card_btn">Lihat Resep</button>
+          </div>
+        </div>
+      </li>
     </ul>
     
   </div>
