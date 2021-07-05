@@ -5,6 +5,7 @@ import Daftar from "../views/Daftar.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Resep from "../views/Resep.vue";
 import Masakan from "../views/Masakan.vue";
+import AddResep from "../views/AddResep.vue";
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,11 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/dashboard/tambahresep",
+    name: "AddResep",
+    component: AddResep,
   },
   {
     path: "/about",

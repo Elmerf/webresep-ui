@@ -6,28 +6,24 @@
         <div class="col">
           <h2>Daftar <strong> Makanan Lengkapnya </strong> Bun</h2>
         </div>
-
-        
       </div>
 
-   
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Cari Resep Disini"
-              aria-label="Cari"
-              aria-describedby="button-addon2"
-            />
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-            >
-              <strong>CARI</strong>
-            </button>
-          </div>
-        
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Cari Resep Disini"
+          aria-label="Cari"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          <strong>CARI</strong>
+        </button>
+      </div>
 
       <CardProduct />
 

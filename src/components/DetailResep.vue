@@ -87,10 +87,6 @@ export default {
   margin-left: 26%;
 }
 
-.row{
-
-}
-
 .detail-ingredient {
   width: 100%;
   margin-top: 5%;
