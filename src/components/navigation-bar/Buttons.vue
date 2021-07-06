@@ -61,6 +61,13 @@
             <button
               type="button"
               class="dropdown-item"
+              v-on:click="$router.push('/masakan').catch((err) => {})"
+            >
+              Resep Masakan
+            </button>
+            <button
+              type="button"
+              class="dropdown-item"
               data-bs-toggle="modal"
               data-bs-target="#modalSetting"
             >
