@@ -40,7 +40,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/resep",
+    path: '/resep/:namaresep',
     name: "Resep",
     component: Resep,
   },

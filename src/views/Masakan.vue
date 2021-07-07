@@ -15,6 +15,8 @@
           placeholder="Cari Resep Disini"
           aria-label="Cari"
           aria-describedby="button-addon2"
+          v-model="search"
+          @keyup="SearchRecipe"
         />
         <button
           class="btn btn-outline-secondary"
@@ -51,14 +53,33 @@
 <script>
 import NavBar from "@/components/NavBar.vue";
 import CardProduct from "@/components/CardProduct.vue";
+//import axios from "axios";
 
 export default {
-    name: "Masakan",
-    components: {
-        NavBar,
-        CardProduct,
-    }
-}
+  name: "Masakan",
+  components: {
+    NavBar,
+    CardProduct,
+  },
+  data() {
+    return {
+      recipes: [],
+      search: "",
+    };
+  },
+  methods: {
+    SearchRecipe(data) {
+      this.recipes = data;
+    },
+  },
+  mounted() {
+    //tidak tau
+    //axios
+      //.get("http://localhost:3000/recipes/user/" + this.$session.get("_id"))
+      //.then((res) => (this.recipes = res.data))
+      //.catch((err) => console.log(err));
+  },
+};
 </script>
 
 <style>

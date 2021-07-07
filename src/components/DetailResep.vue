@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>SOTO LAMONGAN</h1>
+    <h1 class="text">{{ $route.params.namaresep }}</h1>
     <div class="gambar-resep">
       <img src="../assets/soto.jpg" />
     </div>
@@ -9,8 +9,8 @@
         <div class="detail-ingredient">
           <h2>Bahan</h2>
           <ul>
-            <li v-for="ingredient in ingredients" :key="ingredient">
-              {{ ingredient }}
+            <li>
+              {{ $route.params.bahan }}
             </li>
           </ul>
         </div>
@@ -30,47 +30,25 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "DetailResep",
   data() {
     return {
-      ingredients: [
-        "6-8 siung bawang putih",
-        "8 siung bawang merah",
-        "6 buah kemiri",
-        "1-2 buah kunyit bakar kupas",
-        "Minyak goreng",
-        "4 batang daun bawang",
-        "4 batang serai",
-        "10 lembar daun salam",
-        "10 lembar daun jeruk",
-        "1 sdm garam",
-        "½ sdt merica",
-        "½ sdt gula",
-        "1 sdt penyedap",
-        "1 sdt kaldu ayam",
-        "Kol iris",
-        "Telur rebus",
-        "Soun, rendam air",
-        "Seledri, iris",
-        "4 pcs fillet paha ayam",
-        "Jeruk nipis",
-        "Cabai rawit, rebus",
-        "Kecap manis",
-        "Serbuk koya",
-      ],
-      tutorials: [
-        "Blender bumbu halus dengan minyak, lalu tumis sampai minyak keluar",
-        "Masukkan daun bawang, aduk rata",
-        "Tambahkan air, rebus dengan api besar selama 30 menit-60 menit",
-        "Tambahkan gula, garam, merica, kaldu ayam, dan penyedap",
-        "Tambahkan air jika air kuah soto menyusut",
-        "Masukkan paha ayam fillet ke dalam kuah, masak hingga 20 menit ",
-        "Untuk sohun, bilas dengan air panas sampai empuk, lalu bilas kembali dengan air dingin",
-        "Keluarkan paha ayam, goreng lalu suwir, sisihkan",
-        "Sajikan kuah soto dengan kol, soun, irisan paha ayam, telur rebus, cabai rawit, seledri, jeruk nipis, serbuk koya, dan kecap manis sebagai pelengkap",
-      ],
+      recipe: {},
     };
+  },
+  methods: {
+    setRecipe(data) {
+      this.recipe = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/recipes/user/" + this.$session.get("_id"))
+      .then((res) => (this.setRecipe = res.data))
+      .catch((err) => console.log(err));
   },
 };
 </script>
@@ -97,5 +75,9 @@ export default {
   width: 100%;
   margin-top: 5%;
   font-family: "Courier New";
+}
+
+h1.text {
+  text-transform: uppercase;
 }
 </style>
