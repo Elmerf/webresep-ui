@@ -54,7 +54,6 @@
               <textarea
                 class="form-control"
                 aria-label="With textarea"
-                placeholder="Pisahkan dengan Enter"
                 v-model="bahan"
               ></textarea>
             </div>
@@ -67,7 +66,6 @@
               <textarea
                 class="form-control"
                 aria-label="With textarea"
-                placeholder="Pisahkan dengan Enter"
                 v-model="caramasak"
               ></textarea>
             </div>
@@ -77,13 +75,7 @@
               >Gambar Resep</label
             >
             <div class="col-sm-10">
-              <input
-                type="file"
-                accept="image/*"
-                class="form-control"
-                id="inputGroupFile02"
-                v-on:change="onFileChange"
-              />
+              <input type="file" class="form-control" id="inputGroupFile02" />
             </div>
           </div>
           <button type="submit" class="btn btn-warning">Tambah Resep</button>
@@ -95,7 +87,7 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import axios from "axios";
+//import axios from 'axios';
 
 export default {
   name: "AddResep",
@@ -117,39 +109,20 @@ export default {
     };
   },
   methods: {
-    AddResep(e) {
-      e.preventDefault();
-      const form = new FormData();
-      form.append("namaresep", this.namaresep);
-      form.append("deskripsi", this.deskripsi);
-      form.append("bahan", JSON.stringify(this.bahan.split("\n")));
-      form.append("caramasak", JSON.stringify(this.caramasak.split("\n")));
-      form.append("image", this.image.split(",")[1]);
-      form.append("iduser", this.$session.get("_id"));
-      axios({
-        method: "POST",
-        url: "http://localhost:3000/recipe",
-        data: form,
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-        .then((res) => alert(res.data.message))
-        .catch((err) => console.log(err));
+    AddResep(){
+      //tidak tau
+      //axios
+      //.post("http://localhost:3000/user", {
+        //  username: this.username,
+        //  email: this.email,
+        //  password: this.password,
+        //})
     },
-    onFileChange(e) {
-      let files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return;
-      this.createImage(files[0]);
+    logout() {
+      this.$session.destroy();
+      this.$router.push("/");
     },
-    createImage(file) {
-      let reader = new FileReader();
-      let vm = this;
-
-      reader.onload = (e) => {
-        vm.image = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-  },
+  }
 };
 </script>
 
