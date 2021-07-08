@@ -27,7 +27,11 @@
         </button>
       </div>
 
-      <CardProduct />
+      <ul class="cards">
+        <li class="cards_item" v-for="recipe in recipes" :key="recipe.id">
+          <CardRecipeUser :recipe="recipe" />
+        </li>
+      </ul>
 
       <div class="row mt-4">
         <nav aria-label="Page navigation example">
@@ -52,14 +56,15 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import CardProduct from "@/components/CardProduct.vue";
-//import axios from "axios";
+// import CardProduct from "@/components/CardProduct.vue";
+import axios from "axios";
+import CardRecipeUser from "../components/CardRecipeUser.vue";
 
 export default {
   name: "Masakan",
   components: {
     NavBar,
-    CardProduct,
+    CardRecipeUser,
   },
   data() {
     return {
@@ -73,14 +78,12 @@ export default {
     },
   },
   mounted() {
-    //tidak tau
-    //axios
-      //.get("http://localhost:3000/recipes/user/" + this.$session.get("_id"))
-      //.then((res) => (this.recipes = res.data))
-      //.catch((err) => console.log(err));
+    axios
+      .get("http://localhost:3000/recipes")
+      .then((res) => (this.recipes = res.data))
+      .catch((err) => console.log(err));
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>

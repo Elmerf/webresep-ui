@@ -4,8 +4,7 @@
     <Banner />
     <div class="container">
       <div class="row md-4">
-        <div class="col md-6">
-        </div>
+        <div class="col md-6"><h2 class="text-bold">Resep Terbaru</h2></div>
         <div class="col-md-5"></div>
         <div class="col-md-3">
           <router-link to="/masakan">
@@ -17,8 +16,11 @@
         </div>
       </div>
     </div>
-    
-    <CardProductOverview />
+    <ul class="cards mx-auto" style="width: 90%">
+      <li class="cards_item" v-for="recipe in newestRecipes" :key="recipe.id">
+        <CardRecipeUser :recipe="recipe" />
+      </li>
+    </ul>
     <Footer />
   </div>
 </template>
@@ -27,16 +29,27 @@
 // @ is an alias to /src
 import Banner from "@/components/Banner.vue";
 import NavBar from "@/components/NavBar.vue";
-import CardProductOverview from "@/components/CardProductOverview.vue";
 import Footer from "@/components/Footer.vue";
+import axios from "axios";
+import CardRecipeUser from "../components/CardRecipeUser.vue";
 
 export default {
   name: "Home",
   components: {
     NavBar,
     Banner,
-    CardProductOverview,
+    // CardProductOverview,
     Footer,
+    CardRecipeUser,
+  },
+  data() {
+    return { newestRecipes: [] };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/recipes/newest")
+      .then((res) => (this.newestRecipes = res.data))
+      .catch((err) => console.log(err));
   },
 };
 </script>
