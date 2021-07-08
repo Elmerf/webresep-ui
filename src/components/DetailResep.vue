@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="text">{{ $route.params.namaresep }}</h1>
+    <h1 class="text">{{ recipe.namaresep }}</h1>
     <div class="gambar-resep">
-      <img src="../assets/soto.jpg" />
+      <img :src="recipe.image" />
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -10,7 +10,7 @@
           <h2>Bahan</h2>
           <ul>
             <li>
-              {{ $route.params.bahan }}
+              {{ recipe.bahan }}
             </li>
           </ul>
         </div>
@@ -19,8 +19,8 @@
         <div class="detail-tutorial">
           <h2>Cara Memasak</h2>
           <ul>
-            <li v-for="tutorial in tutorials" :key="tutorial">
-              {{ tutorial }}
+            <li>
+              {{ recipe.caramasak }}
             </li>
           </ul>
         </div>
@@ -36,7 +36,7 @@ export default {
   name: "DetailResep",
   data() {
     return {
-      recipe: {},
+      recipe: this.$route.params.recipe,
     };
   },
   methods: {

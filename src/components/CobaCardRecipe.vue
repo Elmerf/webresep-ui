@@ -1,23 +1,25 @@
 <template>
-  <div class="card">
-    <div><img class="card_image" :src="recipe.image" /></div>
-    <div class="card_content">
-      <h2 class="card_title">{{ recipe.namaresep }}</h2>
-      <p class="card_text">
-        {{ recipe.deskripsi }}
-      </p>
-      <router-link :to="{ name: 'Resep', params: { recipe } }">
-        <button class="btn card_btn" href="../components/DetailResep.vue">
-          Lihat Resep
-        </button></router-link
-      >
-    </div>
-  </div>
+  <ul class="cards">
+    <li class="cards_item">
+      <div class="card">
+        <div><img class="card_image" :src=" 'assets/'+ recipe.image" /></div>
+        <div class="card_content">
+          <h2 class="card_title">{{ recipe.namaresep }}</h2>
+          <p class="card_text">
+            {{ recipe.deskripsi }}
+          </p>
+          <button class="btn card_btn" href="../components/DetailResep.vue">
+            Lihat Resep
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
-  name: "CardRecipeUser",
+  name: "CobaCardRecipe",
   props: ["recipe"],
 };
 </script>
