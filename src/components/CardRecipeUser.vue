@@ -9,8 +9,8 @@
       <router-link :to="{ name: 'Resep', params: { recipe } }">
         <button class="btn card_btn" href="../components/DetailResep.vue">
           Lihat Resep
-        </button></router-link
-      >
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -23,6 +23,15 @@ export default {
 </script>
 
 <style>
+/* Font */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -55,8 +64,8 @@ export default {
   font-size: 1.1rem;
   font-weight: bold;
   letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
 }
 
 .card_text {
@@ -71,5 +80,16 @@ export default {
   max-height: 12rem;
   max-width: auto;
   vertical-align: middle;
+}
+.card_btn {
+  background: #ffffff;
+  padding: 0.8rem;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 70%;
+  display: flex;
+  cursor: pointer;
 }
 </style>

@@ -15,8 +15,10 @@
       Kamu masih belum punya resep nih, yuk mulai berbagi resep kesukaanmu!
     </div>
     <ul class="cards">
-      <li class="cards_item" v-for="recipe in recipes" :key="recipe.id">
-        <CardRecipeUser :recipe="recipe" />
+      <li class="cards_item">
+        <div v-for="recipe in recipes" :key="recipe.id">
+          <CardRecipeUser :recipe="recipe" />
+        </div>
       </li>
     </ul>
   </div>
@@ -53,4 +55,36 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+.card {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+</style>
