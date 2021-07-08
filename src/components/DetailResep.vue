@@ -1,24 +1,27 @@
 <template>
-  <div class="container">
-    <h1 class="text mt-4">{{ recipe.namaresep }}</h1>
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <img :src="recipe.image" class="img" />
-      </div>
-      <div class="col-md-6 text-start">
-        <h2><strong> Bahan </strong></h2>
-        <hr />
-        <p>
-          {{ recipe.bahan }}
-        </p>
-        <h2 class="mt-5"><strong> Cara Memasak </strong></h2>
-        <hr />
-        <p>
-          {{ recipe.caramasak }}
-        </p>
+  <div>
+    <div class="container">
+      <h1 class="text mt-4">{{ recipe.namaresep }}</h1>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <img :src="recipe.image" class="img" />
+        </div>
+        <div class="col-md-6 text-start">
+          <h2><strong> Bahan </strong></h2>
+          <hr />
+          <p>
+            {{ recipe.bahan }}
+          </p>
+          <h2 class="mt-5"><strong> Cara Memasak </strong></h2>
+          <hr />
+          <p>
+            {{ recipe.caramasak }}
+          </p>
+        </div>
       </div>
     </div>
     <Footer />
+
     <!--<div class="gambar-resep">
       <img :src="recipe.image" />
     </div>

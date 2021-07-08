@@ -10,12 +10,6 @@
         <button class="btn card_btn" href="../components/DetailResep.vue">
           Lihat Resep
         </button>
-        <router-link to="/dashboard/editresep">
-          <button class="btn btn-warning">Edit Resep</button></router-link
-        >
-        <button class="btn btn-danger" v-on:click="DeleteResep">
-          Delete Resep
-        </button>
       </router-link>
     </div>
   </div>
@@ -23,13 +17,8 @@
 
 <script>
 export default {
-  name: "CardRecipeUser",
+  name: "CardRecipes",
   props: ["recipe"],
-  methods: {
-    DeleteResep(){
-      //delete
-    }
-  }
 };
 </script>
 
@@ -92,6 +81,7 @@ export default {
   max-width: auto;
   vertical-align: middle;
 }
+
 .card_btn {
   background: #ffffff;
   padding: 0.8rem;
@@ -102,9 +92,6 @@ export default {
   width: 70%;
   display: flex;
   cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #70983f;
+  align-content: center;
 }
 </style>

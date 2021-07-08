@@ -6,6 +6,7 @@ import Dashboard from "../views/Dashboard.vue";
 import Resep from "../views/Resep.vue";
 import Masakan from "../views/Masakan.vue";
 import AddResep from "../views/AddResep.vue";
+import EditResep from "../views/EditResep.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,12 @@ const routes = [
     path: "/dashboard/tambahresep",
     name: "AddResep",
     component: AddResep,
+  },
+  
+  {
+    path: "/dashboard/editresep",
+    name: "EditResep",
+    component: EditResep,
   },
   {
     path: "/about",

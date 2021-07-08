@@ -29,7 +29,7 @@
 
       <ul class="cards">
         <li class="cards_item" v-for="recipe in recipes" :key="recipe.id">
-          <CardRecipeUser :recipe="recipe" />
+          <CardRecipes :recipe="recipe" />
         </li>
       </ul>
 
@@ -58,13 +58,14 @@
 import NavBar from "@/components/NavBar.vue";
 // import CardProduct from "@/components/CardProduct.vue";
 import axios from "axios";
-import CardRecipeUser from "../components/CardRecipeUser.vue";
+//import CardRecipeUser from "../components/CardRecipeUser.vue";
+import CardRecipes from "../components/CardRecipes.vue";
 
 export default {
   name: "Masakan",
   components: {
     NavBar,
-    CardRecipeUser,
+    CardRecipes,
   },
   data() {
     return {

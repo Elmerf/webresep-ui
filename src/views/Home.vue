@@ -18,7 +18,7 @@
     </div>
     <ul class="cards mx-auto" style="width: 90%">
       <li class="cards_item" v-for="recipe in newestRecipes" :key="recipe.id">
-        <CardRecipeUser :recipe="recipe" />
+        <CardRecipes :recipe="recipe" />
       </li>
     </ul>
     <Footer />
@@ -31,7 +31,8 @@ import Banner from "@/components/Banner.vue";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import axios from "axios";
-import CardRecipeUser from "../components/CardRecipeUser.vue";
+//import CardRecipeUser from "../components/CardRecipeUser.vue";
+import CardRecipes from "../components/CardRecipes.vue";
 
 export default {
   name: "Home",
@@ -40,7 +41,8 @@ export default {
     Banner,
     // CardProductOverview,
     Footer,
-    CardRecipeUser,
+    CardRecipes,
+    //CardRecipeUser,
   },
   data() {
     return { newestRecipes: [] };
