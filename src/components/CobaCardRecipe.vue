@@ -2,7 +2,7 @@
   <ul class="cards">
     <li class="cards_item">
       <div class="card">
-        <div><img class="card_image" :src=" 'assets/'+ recipe.image" /></div>
+        <div><img class="card_image" :src="'assets/' + recipe.image" /></div>
         <div class="card_content">
           <h2 class="card_title">{{ recipe.namaresep }}</h2>
           <p class="card_text">
