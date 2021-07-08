@@ -1,11 +1,29 @@
 <template>
   <div class="container">
-    <h1 class="text">{{ recipe.namaresep }}</h1>
-    <div class="gambar-resep">
+    <h1 class="text mt-4">{{ recipe.namaresep }}</h1>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <img :src="recipe.image" class="img" />
+      </div>
+      <div class="col-md-6 text-start">
+        <h2><strong> Bahan </strong></h2>
+        <hr />
+        <p>
+          {{ recipe.bahan }}
+        </p>
+        <h2 class="mt-5"><strong> Cara Memasak </strong></h2>
+        <hr />
+        <p>
+          {{ recipe.caramasak }}
+        </p>
+      </div>
+    </div>
+    <Footer />
+    <!--<div class="gambar-resep">
       <img :src="recipe.image" />
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 text-start">
         <div class="detail-ingredient">
           <h2>Bahan</h2>
           <ul>
@@ -15,7 +33,7 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-start">
         <div class="detail-tutorial">
           <h2>Cara Memasak</h2>
           <ul>
@@ -25,15 +43,19 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
 import axios from "axios";
 
 export default {
   name: "DetailResep",
+  components: {
+    Footer,
+  },
   data() {
     return {
       recipe: this.$route.params.recipe,
@@ -79,5 +101,17 @@ export default {
 
 h1.text {
   text-transform: uppercase;
+}
+
+img {
+  border: 1px solid #d8d8d8;
+  width: 80%;
+  height: 80%;
+  margin: 40px;
+  box-shadow: 0px 0.5px 1px #d8d8d8;
+}
+
+p {
+  text-align: justify;
 }
 </style>

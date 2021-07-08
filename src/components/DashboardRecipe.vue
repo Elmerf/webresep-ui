@@ -15,10 +15,8 @@
       Kamu masih belum punya resep nih, yuk mulai berbagi resep kesukaanmu!
     </div>
     <ul class="cards">
-      <li class="cards_item">
-        <div v-for="recipe in recipes" :key="recipe.id">
-          <CardRecipeUser :recipe="recipe" />
-        </div>
+      <li class="cards_item" v-for="recipe in recipes" :key="recipe.id">
+        <CardRecipeUser :recipe="recipe" />
       </li>
     </ul>
   </div>
