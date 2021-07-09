@@ -10,26 +10,34 @@
         <button class="btn card_btn" href="../components/DetailResep.vue">
           Lihat Resep
         </button>
-        <router-link to="/dashboard/editresep">
-          <button class="btn btn-warning">Edit Resep</button></router-link
-        >
-        <button class="btn btn-danger" v-on:click="DeleteResep">
-          Delete Resep
-        </button>
       </router-link>
+      <router-link to="/dashboard/editresep">
+        <button class="btn btn-warning">Edit Resep</button></router-link
+      >
+      <button class="btn btn-danger" v-on:click="DeleteResep">
+        Delete Resep
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "CardRecipeUser",
   props: ["recipe"],
   methods: {
-    DeleteResep(){
-      //delete
-    }
-  }
+    DeleteResep() {
+      axios
+        .delete(`http://localhost:3000/recipe/${this.recipe._id}`)
+        .then((res) => {
+          alert(res.data.message);
+          location.reload();
+        })
+        .catch((err) => console.log(err));
+    },
+  },
 };
 </script>
 

@@ -9,14 +9,26 @@
         <div class="col-md-6 text-start">
           <h2><strong> Bahan </strong></h2>
           <hr />
-          <p>
-            {{ recipe.bahan }}
-          </p>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              v-for="(bahan, index) in recipe.bahan"
+              :key="index"
+            >
+              {{ bahan }}
+            </li>
+          </ul>
           <h2 class="mt-5"><strong> Cara Memasak </strong></h2>
           <hr />
-          <p>
-            {{ recipe.caramasak }}
-          </p>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item"
+              v-for="(caramasak, index) in recipe.caramasak"
+              :key="index"
+            >
+              {{ caramasak }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -109,7 +121,6 @@ h1.text {
 img {
   border: 1px solid #d8d8d8;
   width: 80%;
-  height: 80%;
   margin: 40px;
   box-shadow: 0px 0.5px 1px #d8d8d8;
 }
