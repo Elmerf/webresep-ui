@@ -31,11 +31,11 @@ const routes = [
     name: "AddResep",
     component: AddResep,
   },
-  
   {
     path: "/dashboard/editresep",
     name: "EditResep",
     component: EditResep,
+    props: true,
   },
   {
     path: "/about",
