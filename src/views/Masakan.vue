@@ -73,9 +73,24 @@ export default {
       search: "",
     };
   },
+  //mounted() {
+    //    this.fetchRecipes()
+    //},
+    //methods: {
+      //  fetchRecipes() {
+        //    let param = _.isEmpty(this.search) ? 'all' : this.search
+          //  axios.get("http://localhost:3000/recipes" + param).then(({ data }) => {
+            //    this.recipes = data
+            //})
+        //}
+    //},
   methods: {
-    SearchRecipe(data) {
-      this.recipes = data;
+    SearchRecipe() {
+      //lom bisa
+      //axios
+        //.get("http://localhost:3000/recipes?q="+this.search)
+        //.then((res) => (this.recipes = res.data))
+        //.catch((err) => console.log(err));
     },
   },
   mounted() {

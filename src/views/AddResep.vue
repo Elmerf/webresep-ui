@@ -95,7 +95,7 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "AddResep",
@@ -132,7 +132,10 @@ export default {
         data: form,
         headers: { "Content-Type": "multipart/form-data" },
       })
-        .then((res) => alert(res.data.message))
+        .then((res) => {
+          alert(res.data.message);
+          this.$router.push("/dashboard");
+        })
         .catch((err) => console.log(err));
     },
     onFileChange(e) {

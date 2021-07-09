@@ -19,11 +19,13 @@
       id="navbarTogglerDemo01"
     >
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <router-link to="/daftar"
-          ><button type="button" class="btn btn-warning navbar-login">
-            Daftar
-          </button></router-link
+        <button
+          type="button"
+          class="btn btn-warning navbar-login"
+          v-on:click="Daftar"
         >
+          Daftar
+        </button>
 
         <button
           type="button"
@@ -90,6 +92,9 @@ export default {
     logout() {
       this.$session.destroy();
       location.reload();
+    },
+    Daftar() {
+      this.$router.replace("/daftar");
     },
   },
 };

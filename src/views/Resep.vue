@@ -15,11 +15,6 @@ export default {
     NavBar,
     DetailResep,
   },
-  beforeCreate() {
-    if (!this.$session.exists()) {
-      this.$router.push("/");
-    }
-  },
   methods: {
     logout() {
       this.$session.destroy();
