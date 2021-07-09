@@ -3,9 +3,10 @@
     <div><img class="card_image" :src="recipe.image" /></div>
     <div class="card_content">
       <h2 class="card_title">{{ recipe.namaresep }}</h2>
-      <p class="card_text">
+      <p class="card_text mt-3">
         {{ recipe.deskripsi }}
       </p>
+      <hr />
       <router-link :to="{ name: 'Resep', params: { recipe } }">
         <button class="btn card_btn" href="../components/DetailResep.vue">
           Lihat Resep

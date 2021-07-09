@@ -3,9 +3,10 @@
     <div><img class="card_image" :src="recipe.image" /></div>
     <div class="card_content">
       <h2 class="card_title">{{ recipe.namaresep }}</h2>
-      <p class="card_text">
+      <p class="card_text mt-3">
         {{ recipe.deskripsi }}
       </p>
+      <hr />
       <router-link :to="{ name: 'Resep', params: { recipe } }">
         <button class="btn card_btn" href="../components/DetailResep.vue">
           Lihat Resep
@@ -93,11 +94,13 @@ export default {
   line-height: 1.5;
   margin-bottom: 1.25rem;
   font-weight: 400;
+  height: 10rem;
+  text-align: justify;
 }
 
 .card_image {
-  max-height: 12rem;
-  max-width: auto;
+  width: 100%;
+  height: 12rem;
   vertical-align: middle;
 }
 .card_btn {
