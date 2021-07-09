@@ -12,7 +12,7 @@
           Lihat Resep
         </button>
       </router-link>
-      <router-link to="/dashboard/editresep">
+      <router-link :to="{ name: 'EditResep', params: { recipe } }">
         <button class="btn btn-warning">Edit Resep</button></router-link
       >
       <button class="btn btn-danger" v-on:click="DeleteResep">

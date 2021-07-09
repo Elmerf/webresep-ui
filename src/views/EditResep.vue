@@ -20,7 +20,7 @@
       <!--form tambahresep-->
       <div class="form">
         <div class="row mt-3"></div>
-        <form @submit="AddResep">
+        <form @submit="EditResep">
           <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label"
               >Nama Resep</label
@@ -86,9 +86,7 @@
               />
             </div>
           </div>
-          <button type="button" class="btn btn-warning" v-on:click="EditResep">
-            Edit Resep
-          </button>
+          <button type="submit" class="btn btn-warning">Edit Resep</button>
         </form>
       </div>
     </div>
@@ -97,13 +95,24 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-//import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "EditResep",
-  props: ["namaresep", "deskripsi", "bahan", "caramasak", "image"],
   components: {
     NavBar,
+  },
+  data() {
+    return {
+      id: this.$route.params.recipe._id,
+      namaresep: this.$route.params.recipe.namaresep,
+      deskripsi: this.$route.params.recipe.deskripsi,
+      bahan: this.$route.params.recipe.bahan.toString().replace(/,/g, "\n"),
+      caramasak: this.$route.params.recipe.caramasak
+        .toString()
+        .replace(/,/g, "\n"),
+      image: "",
+    };
   },
   beforeCreate() {
     if (!this.$session.exists()) {
@@ -111,20 +120,41 @@ export default {
     }
   },
   methods: {
-      EditResep(){
-          //axios
-          //.put("http://localhost:3000/recipe", {
-            //namaresep: this.namaresep,
-            //deskripsi: this.deskripsi,
-            //bahan: this.bahan,
-            //caramasak: this.caramasak,
-            //image: this.image,
-          //})
-          //.then((res) => {
-            //alert(res.data.messages);
-          //})
-          //.catch((error) => console.log(error));
-      }
+    onFileChange(e) {
+      let files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      let reader = new FileReader();
+      let vm = this;
+
+      reader.onload = (e) => {
+        vm.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    EditResep(e) {
+      e.preventDefault();
+      const form = new FormData();
+      form.append("namaresep", this.namaresep);
+      form.append("deskripsi", this.deskripsi);
+      form.append("bahan", JSON.stringify(this.bahan.split("\n")));
+      form.append("caramasak", JSON.stringify(this.caramasak.split("\n")));
+      form.append("image", this.image.split(",")[1]);
+      form.append("iduser", this.$session.get("_id"));
+      axios({
+        method: "PUT",
+        url: `http://localhost:3000/recipe/${this.id}`,
+        data: form,
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+        .then((res) => {
+          alert(res.data.message);
+          this.$router.push("/dashboard");
+        })
+        .catch((err) => console.log(err));
+    },
   },
 };
 </script>
