@@ -82,7 +82,7 @@ export default {
       this.recipe = data;
     },
   },
-  mounted() {
+  beforeCreate() {
     axios
       .get("http://localhost:3000/recipes/user/" + this.$session.get("_id"))
       .then((res) => (this.setRecipe = res.data))

@@ -151,7 +151,7 @@ export default {
       })
         .then((res) => {
           alert(res.data.message);
-          this.$router.push("/dashboard");
+          location.href = "/dashboard";
         })
         .catch((err) => console.log(err));
     },
