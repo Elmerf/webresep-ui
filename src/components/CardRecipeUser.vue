@@ -4,7 +4,7 @@
     <div class="card_content">
       <h2 class="card_title">{{ recipe.namaresep }}</h2>
       <p class="card_text mt-3">
-        {{ recipe.deskripsi }}
+        {{ deskripsi }}
       </p>
       <hr />
       <router-link :to="{ name: 'Resep', params: { recipe } }">
@@ -37,6 +37,14 @@ export default {
           location.reload();
         })
         .catch((err) => console.log(err));
+    },
+  },
+  computed: {
+    deskripsi() {
+      const length = 250;
+      const desc = this.recipe.deskripsi;
+      if (desc.length < length) return desc;
+      else return `${desc.substring(0, length)}...`;
     },
   },
 };

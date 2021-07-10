@@ -6,6 +6,7 @@
         <div class="col-md-6">
           <img :src="recipe.image" class="img" />
           <p class="mx-5">Created: {{ dateCreated }}</p>
+          <p>{{ recipe.deskripsi }}</p>
         </div>
         <div class="col-md-6 text-start">
           <h2><strong> Bahan </strong></h2>
@@ -34,32 +35,6 @@
       </div>
     </div>
     <Footer />
-
-    <!--<div class="gambar-resep">
-      <img :src="recipe.image" />
-    </div>
-    <div class="row">
-      <div class="col-md-6 text-start">
-        <div class="detail-ingredient">
-          <h2>Bahan</h2>
-          <ul>
-            <li>
-              {{ recipe.bahan }}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6 text-start">
-        <div class="detail-tutorial">
-          <h2>Cara Memasak</h2>
-          <ul>
-            <li>
-              {{ recipe.caramasak }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 
@@ -96,8 +71,6 @@ export default {
         month: "short",
         year: "numeric",
       });
-      // let dateFormated =
-      //   date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
       return localDateString;
     },
   },
