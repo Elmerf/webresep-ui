@@ -5,6 +5,7 @@
       <div class="row mt-4">
         <div class="col-md-6">
           <img :src="recipe.image" class="img" />
+          <p class="mx-5">Created: {{ dateCreated }}</p>
         </div>
         <div class="col-md-6 text-start">
           <h2><strong> Bahan </strong></h2>
@@ -86,6 +87,19 @@ export default {
       .get("http://localhost:3000/recipes/user/" + this.$session.get("_id"))
       .then((res) => (this.setRecipe = res.data))
       .catch((err) => console.log(err));
+  },
+  computed: {
+    dateCreated() {
+      let date = new Date(this.recipe.createdAt);
+      const localDateString = date.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+      // let dateFormated =
+      //   date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+      return localDateString;
+    },
   },
 };
 </script>
